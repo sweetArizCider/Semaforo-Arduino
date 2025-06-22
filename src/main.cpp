@@ -1,5 +1,6 @@
 #include <Arduino.h>
 
+
 class Semaforo {
 public:
   int redLed;
@@ -33,11 +34,11 @@ public:
     digitalWrite(this->redLed, HIGH);
   }
 
-  void twinkleYellowLed () {
+  void twinkleGreenLed () {
     for (int i = 0; i < 3; i++) {
-      digitalWrite(this->yellowLed, LOW);
+      digitalWrite(this->greenLed, LOW);
       delay(500);
-      digitalWrite(this->yellowLed, HIGH);
+      digitalWrite(this->greenLed, HIGH);
       delay(500);
     }
   }
@@ -56,35 +57,34 @@ void setup() {
 }
 
 void loop() {
-
   semaforo1.turnOnGreen();
   semaforo2.turnOnRed();
   semaforo3.turnOnRed();
   semaforo4.turnOnRed();
-  delay(5000);
+  delay(4000);
+  semaforo1.twinkleGreenLed();
   semaforo1.turnOnYellow();
-  delay(1500);
-  semaforo1.twinkleYellowLed();
+  delay(2000);
   semaforo1.turnOnRed();
+
   semaforo2.turnOnGreen();
-
-  delay(5000);
+  delay(4000);
+  semaforo2.twinkleGreenLed();
   semaforo2.turnOnYellow();
-  delay(1500);
-  semaforo2.twinkleYellowLed();
+  delay(2000);
   semaforo2.turnOnRed();
+
   semaforo3.turnOnGreen();
-  delay(5000);
+  delay(4000);
+  semaforo3.twinkleGreenLed();
   semaforo3.turnOnYellow();
-  delay(1500);
-  semaforo3.twinkleYellowLed();
+  delay(2000);
   semaforo3.turnOnRed();
+
   semaforo4.turnOnGreen();
-
-  delay(5000);
+  delay(4000);
+  semaforo4.twinkleGreenLed();
   semaforo4.turnOnYellow();
-  delay(1500);
-  semaforo4.twinkleYellowLed();
+  delay(2000);
   semaforo4.turnOnRed();
-
 }
